@@ -43,7 +43,7 @@ if(USE_BACKEND STREQUAL "CUDA")
   if(CMAKE_CUDA_FLAGS)
     list(REMOVE_ITEM CMAKE_CUDA_FLAGS "-cudart static")
   endif()
-  string(APPEND CMAKE_CUDA_FLAGS "-cudart shared")
+  string(APPEND CMAKE_CUDA_FLAGS "-cudart shared -ldl -pthread")
 
   enable_language(CUDA)
 
